@@ -1,0 +1,236 @@
+/* ===========================
+   STYLE
+=========================== */
+:root {
+
+  /**
+   * colors
+   */
+
+  --red-global:hsl(0, 96%, 40%);
+  --cadet-blue-creyola: hsl(222, 14%, 69%);
+  --oxford-blue-1: hsl(223, 47%, 6%);
+  --oxford-blue-2: hsl(0, 0%, 100%);
+  --oxford-blue-3: hsl(222, 50%, 11%);
+  --sonic-silver: hsl(0, 0%, 44%);
+  --space-cadet: hsl(0, 0%, 0%);
+  --pastel-pink: hsl(1, 53%, 75%);
+  --eerie-black: hsl(0, 0%, 15%);
+  --light-gray: hsl(0, 0%, 80%);
+  --white: hsl(0, 0%, 100%);
+
+  /**
+   * typography
+   */
+
+  --ff-chakra-petch: 'Chakra Petch', sans-serif;
+  --ff-mulish: 'Mulish', sans-serif;
+  
+  --fs-1: 3.5rem;
+  --fs-2: 3rem;
+  --fs-3: 2.4rem;
+  --fs-4: 1.8rem;
+  --fs-5: 1.4rem;
+  --fs-6: 1.2rem;
+  
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;}
+
+/*-----------------------------------*\
+  #PAGE HEADER (service page)
+\*-----------------------------------*/
+
+/* Contenedor general */
+.page-header {
+  position: relative;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--ff-chakra-petch);
+}
+
+/* Fondo con imagen */
+.page-header-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url('../images/page/About_inyeccion.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Capa oscura */
+.page-header-bg .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.671), rgba(0,0,0,0.35));
+  z-index: 1;
+}
+
+.serh1{
+  color: #fcfbfb;
+  z-index: 2;
+  position: relative;
+}
+  
+/* Breadcrumb */
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  font-size: var(--fs-5);
+  font-family: var(--ff-chakra-petch);
+  text-transform: uppercase;
+}
+/**********************************************/
+
+.content {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5em;
+  font-family: var(--ff-chakra-petch);
+  color: #fcfbfb;
+}
+
+.logo {
+  text-align: center;
+}
+
+.contact-wrapper > * {
+  padding: 1em;
+}
+.section-title{
+  color: #fcfbfb;
+}
+
+.contact-form {
+  background-color: #121111fd;
+  color: #fff;
+}
+
+.contact-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact-form form .block {
+  grid-column: 1 / 3;
+}
+
+.contact-form form p {
+  margin: 0;
+  padding: 1em;
+}
+
+.contact-form form button,
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  padding: 0.7em;
+  border: none;
+  background: none;
+  outline: 0;
+  color: #fff;
+  border-bottom: 1px solid var(--red-global);
+}
+
+.contact-form form button {
+  background-color: var(--red-global);
+  color: #fffdfd;
+  border: 0;
+  text-transform: uppercase;
+  padding: 1em;
+  width: 70%;
+  border-radius: 20px;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+  background-color: #ffffff;
+  color: var(--red-global);
+  transition: background-color 1s ease-out;
+  outline: 0;
+}
+
+.contact-info {
+  background-color: #000;
+}
+
+.contact-info h4,
+.contact-info ul,
+.contact-info p {
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  padding: 0.5em;
+}
+
+/* Small screens: mobile first */
+.contact-form form {
+  display: grid;
+  grid-template-columns: 1fr; /* Una sola columna */
+  gap: 1em;
+}
+
+.contact-form form .block {
+  grid-column: 1; /* Ocupa toda la columna */
+}
+
+.contact-form form button {
+  width: 100%; /* Botón full width en móviles */
+}
+
+/* Medium & Large Screens */
+@media (min-width: 700px) {
+
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2em;
+  }
+
+  .contact-form form {
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+  }
+
+  .contact-form form .block {
+    grid-column: 1 / 3; /* Bloque completo en dos columnas */
+  }
+
+  .contact-wrapper > * {
+    padding: 2em;
+  }
+
+  .contact-info h4,
+  .contact-info ul,
+  .contact-info p {
+    padding: 1em;
+  }
+}
+
+/* Ocultar logo en pantallas pequeñas */
+@media (max-width: 700px) {
+  .contact-info .logo {
+    display: none;
+  }
+}

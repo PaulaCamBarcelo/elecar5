@@ -1,0 +1,90 @@
+/* ===========================
+   SECCIÓN TOPBAR
+=========================== */
+
+:root {
+ --red-global: hsl(1, 91%, 39%);
+  --white: hsl(0, 0%, 100%);
+  --negro-top: hsl(0,0,0);
+
+}
+
+* {
+  transition: all 0.3s ease-in-out; 
+}
+
+/* === TOPBAR === */
+.topbar {
+  background: #000000f1; /* */
+  font-size: 14px;
+  padding: 8px 0;
+  
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* para móviles */
+  gap: 10px;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.topbar-left small,
+.topbar-right small {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff; /* Letras */
+}
+
+.topbar .icon {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Redes sociales */
+.topbar .social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background:var(--red-global);
+  color: var( --white);
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.topbar .social a:hover {
+  background: var( --white);
+  color:var(--red-global);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .topbar {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .topbar .container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .topbar-left,
+  .topbar-right {
+    justify-content: center;
+    gap: 12px;
+  }
+}
+

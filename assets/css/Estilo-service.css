@@ -1,0 +1,94 @@
+/* ===========================
+   SECCIÓN SERVICIOS
+=========================== */
+.services {
+  background: #f9fafc;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.services .section-subtitle {
+  color: #8b0510; 
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.services .section-title {
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+  color: #1a1a1a;
+}
+ 
+.service-list {
+  display: grid;
+  grid-template-columns: 2fr; /* Por defecto: 1 card en móviles */
+  gap: 2rem;
+  max-width:1100px;
+  margin: 0 auto;
+}
+
+
+/* ==== CARD ==== */
+.service-card {
+  background: #fff;
+  padding: 20px 20px;
+  border-radius: 2px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Icono */
+.card-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .card-icon img {
+  transform: scale(1.1);
+}
+
+/* Contenido */
+.card-title {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+  color: #5e0202;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #242424;
+  line-height: 1.3;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .service-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .card-content {
+    text-align: center;
+  }
+}
+/*
+@media (min-width: 992px) {
+  .service-list {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio *
+  }
+}*/
