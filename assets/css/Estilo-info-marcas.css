@@ -1,6 +1,6 @@
 /* Sección Pagos y Marcas */
 .payments-brands-section {
-     background: linear-gradient(rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0.6)), url("../images/hero/hero-bg.jpg") center/cover no-repeat;
+     background: linear-gradient(rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.6)), url("../images/hero/hero-bg.jpg") center/cover no-repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -102,6 +102,7 @@
     height: 40px;
   }
 }
+
 
 
 
