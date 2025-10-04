@@ -1,0 +1,102 @@
+.container_acordeon {
+  width: 100%;
+}
+
+.menu_acordeon {
+  width: 100%;
+  background: var(--card);
+  height: auto; /* 👈 cambia el height fijo por auto */
+}
+
+
+.list_acordeon {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  max-height: 45px; /* cerrado */
+  align-items: center; /* centra horizontalmente */
+}
+
+.list_acordeon.scale {
+  max-height: 1000px; /* suficientemente grande para Calendly */
+}
+
+
+.fa-chevron-down {
+  transition: 0.3s;
+}
+
+p {
+  padding: 10px;
+  color: #fff;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/*************************************/
+/*Ajuste dinamico de altura*/
+.container_acordeon {
+  width: 100%;
+}
+
+.menu_acordeon {
+  width: 100%;
+  background: var(--card);
+}
+
+.list_acordeon {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  max-height: 45px; /* cerrado */
+  align-items: center;
+}
+
+.list_acordeon.scale {
+  max-height: 1200px; /* grande para Calendly */
+}
+
+.fa-chevron-down {
+  transition: 0.3s;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* Calendly */
+.calendly-inline-widget {
+  width: 100%;
+  max-width: 600px;
+  height: 700px;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .calendly-inline-widget {
+    height: 500px;
+  }
+}
+
+
+/************************************/
+/*Calendario*/
+.calendly-inline-widget {
+  width: 100%;
+  max-width: 600px;
+  height: 700px; /* se puede ajustar según contenido */
+  margin: 0 auto; /* centra horizontalmente */
+  display: block;
+}
+@media (max-width: 768px) {
+  .calendly-inline-widget {
+    height: 500px;
+  }
+  .cta_container .acordeon{
+    width: 100%;
+    .calendly-inline-widget{
+      width: 95%;
+    }
+  }
+}
