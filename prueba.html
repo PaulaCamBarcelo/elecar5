@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Botones Adaptables</title>
+<style>
+  /* 🎨 Paleta base */
+  :root {
+    --bg: #f7f7f7;
+    --text: #1b1b1b;
+    --btn-bg: #494949; /* gris claro para modo claro */
+    --btn-text: #f1f1f1;
+  }
+
+  body.dark {
+    --bg: #121212;
+    --text: #f2f2f2;
+    --btn-bg: #b5120a; /* rojo principal para modo oscuro */
+    --btn-text: #ffffff;
+  }
+
+  /* 🎨 Estilos generales */
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Mulish", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 2rem;
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  /* ==============================
+     BOTÓN PRINCIPAL
+  ============================== */
+  button, .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 40px;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover con efecto espejo */
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+  }
+
+  .btn:hover::before {
+    left: 150%;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ==============================
+     BOTÓN SECUNDARIO
+  ============================== */
+  .btn-secondary {
+    background: transparent;
+    color: var(--btn-bg);
+    border: 2px solid var(--btn-bg);
+  }
+
+  .btn-secondary:hover {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: 2px solid var(--btn-bg);
+  }
+
+  /* ==============================
+     TOGGLE MODO OSCURO
+  ============================== */
+  .toggle {
+    background: none;
+    border: 2px solid var(--text);
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .toggle:hover {
+    background: var(--text);
+    color: var(--bg);
+  }
+</style>
+</head>
+<body>
+  <h1>Vista previa - Botones Adaptables</h1>
+  <button class="btn">Botón principal</button>
+  <button class="btn btn-secondary">Botón secundario</button>
+  <button class="toggle" onclick="document.body.classList.toggle('dark')">
+    Alternar modo
+  </button>
+</body>
+</html>

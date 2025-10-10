@@ -1,0 +1,260 @@
+/* =========================
+   SECCIÓN PAGOS Y MARCAS
+========================= */
+.payments-brands-section {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Fondo neutro oscuro para contraste */
+  background: radial-gradient(
+    circle at center,
+    rgba(25, 25, 25, 0.95) 0%,
+    rgba(10, 10, 10, 1) 100%
+  );
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.payments-brands-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 0.2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* =========================
+   COLUMNA IZQUIERDA
+========================= */
+.payments-brands-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.payments-brands-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.payments-brands-content p.section-subtitle {
+  font-size: 1rem;
+  color: #dcdcdc;
+}
+
+.payments-brands-content p {
+  max-width: 80%;
+  color: #f4f4f4;
+  line-height: 1.6;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* =========================
+   COLuMNA IDZQUIERDA
+========================= */
+.payments-info {
+  text-align: center;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Nueva línea para los botones */
+.payments-info a.btn {
+  display: inline-flex;
+  margin: 0 0.5rem; /* espacio entre botones */
+}
+
+/* Agrupar botones en fila */
+.payments-info {
+  flex-direction: column; /* mantiene el título arriba */
+}
+
+.payments-info .btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
+/* Título */
+.payments-info .h3 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 1.6rem;
+  color: #f5f5f5;
+  max-width: 550px;
+  line-height: 1.4;
+  text-transform: none;
+  align-items: center;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 600px) {
+  .payments-info {
+    gap: 1rem;
+  }
+  .payments-info .h3 {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
+  .payments-info .btn {
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+
+/* =========================
+   COLUMNA DERECHA (AUTO)
+========================= */
+.payments-brands-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-car {
+  width: clamp(280px, 38vw, 600px);
+  height: auto;
+  opacity: 0.85; /* 🔥 más visible pero no opaca el fondo */
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+  animation: carFloat 6s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+/* Animación flotante */
+@keyframes carFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+/* =========================
+   RESPONSIVE: TABLET
+========================= */
+@media (max-width: 1024px) {
+  .payments-brands-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .payments-brands-image {
+    order: -1; /* 🔝 Mueve el auto arriba del texto */
+    margin-bottom: 2rem;
+  }
+
+  .floating-car {
+    width: clamp(300px, 70vw, 450px);
+    opacity: 0.9;
+  }
+
+  .payments-list {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+/* =========================
+   RESPONSIVE: MÓVIL
+========================= */
+@media (max-width: 768px) {
+  .payments-brands-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .floating-car {
+    width: 85vw;
+    opacity: 0.95; /* más visible en pantallas pequeñas */
+  }
+
+  .payments-brands-content h1 {
+    font-size: 2rem;
+  }
+
+  .payments-brands-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================
+   SECCION DE MARCAS (slider)
+========================= */
+.brands-section {
+  width: 100%;
+  overflow: hidden;
+  background-color: #111111; /* fondo oscuro */
+  padding: 0; 
+}
+
+.brands-slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 120px; /* altura desktop */
+  overflow: hidden;
+  position: relative;
+}
+
+.brands-track {
+  display: flex;
+  gap: 50px; /* espacio entre logos */
+  animation: scrollBrands 20s linear infinite;
+}
+
+
+.brand img {
+  height: 60px;        /* altura deseada en desktop */
+  max-height: 60px;    /* aseguras que no se pase */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  /* filter: brightness(0) invert(1); */
+}
+
+
+/* animación de scroll horizontal infinito */
+@keyframes scrollBrands {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* ajusta según la cantidad de logos duplicados */
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .brands-slider {
+    height: 2.5rem; /* altura móvil */
+  }
+
+  .brands-track {
+    gap: 20px;
+  }
+
+  .brand img {
+  height: 30px;        /* altura deseada en desktop */
+  max-height: 30px;    /* aseguras que no se pase */
+  width: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+ 
+}
+}
