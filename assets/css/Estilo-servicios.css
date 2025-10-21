@@ -1,0 +1,206 @@
+/* =============================
+   ESTILO PÁGINAS DE SERVICIOS
+============================= */
+.section {
+  padding: 60px 20px;
+}
+
+.container_serv {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Títulos */
+.section h2 {
+  font-family: var(--ff-chakra-petch);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.section p, 
+.section li {
+  font-family: var(--ff-mulish);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Importancia */
+.service-importance ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+
+/* Galería */
+.service-gallery {
+  margin: 50px auto;      /* centrado vertical y horizontal */
+  max-width: 1200px;       /* ancho máximo igual al resto de secciones */
+  text-align: center;     /* centra títulos y subtítulos si hay */
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* siempre 2 columnas */
+  grid-template-rows: repeat(2, 200px);  /* siempre 2 filas */
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/***************/
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.gallery-item .caption {
+  position: absolute;
+  bottom: 0; /* Aparece abajo */
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(0,0,0,0.6); /* fondo oscuro semi-transparente */
+  color: #fff;
+  font-family: var(--ff-mulish);
+  font-size: 0.9rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  transform: translateY(100%); /* oculto inicialmente */
+}
+
+/* Efecto al pasar el mouse */
+.gallery-item:hover .caption {
+  transform: translateY(0);
+}
+
+/* Lightbox */
+.lightbox {
+  z-index: 2000;
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* para poner caption debajo del img */
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+  position: relative;
+}
+
+#lightbox-caption {
+  position: absolute;
+  top: 50%;           /* centro vertical */
+  left: 50%;          /* centro horizontal */
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6); /* fondo semitransparente */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 80%;
+  font-family: var(--ff-mulish, sans-serif);
+  pointer-events: none; /* para que no interfiera con clicks */
+}
+
+
+.lightbox .close,
+.lightbox .prev,
+.lightbox .next {
+  z-index: 2001; /* asegurar que estén encima del overlay */
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+}
+
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
+
+/********************************/
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .lightbox.active {
+  display: flex; /* centrado horizontal y vertical */
+}
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  .section h3{
+    font-size: 1.0rem;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+    .service-gallery {
+    padding: 0 1px;   /* aún menos espacio lateral */
+  }
+  .gallery-grid {
+    gap:6px;         /* más compacto */
+    grid-template-rows: repeat(2, 100px);
+  }
+  .gallery-grid img {
+    height: 100px;     /* se ajusta automáticamente */
+  }
+}
+

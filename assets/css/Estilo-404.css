@@ -1,0 +1,290 @@
+/* ================================
+   SECCIÓN 404 NOT FOUND
+================================= */
+
+/* ================================
+   🎨 VARIABLES DE TEMA
+================================= */
+:root {
+  /* 🎨 Modo CLARO (default) */
+  --bg: linear-gradient(135deg, #d4d4d4 0%, #e0e0e0 50%, #ffffff 100%);
+  --bg-nav: #a6a6a6;
+  --text: #212529;
+  --text-light: #6d6f70;
+  --accent: #a91101; /* rojo base */
+  --card: #ffffff;
+
+  /* Extras */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Velocímetro */
+  --size: min(82vmin, 380px);
+  --angle: 0deg; /* 0→360 (JS actualiza) */
+  --glow-intensity: 0.35; /* JS actualiza */
+
+  --floor-blue: 43, 85, 229; /* #2B55E5 en RGB */
+}
+
+/* 🎨 Modo OSCURO */
+body.dark {
+  --bg: linear-gradient(135deg, #1a1a1a 0%, #141414 50%, #222 100%);
+  --text: #f5f5f5;
+  --text-light: #d9d9d9;
+  --accent: #e20a0a;
+  --card: #1f1f1f;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Mulish", sans-serif;
+}
+
+/* ================================
+   SECCIÓN 404 NOT FOUND
+================================= */
+
+.hero.notfound {
+  margin-top: 90px; /* compensar topbar/nav fijo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: calc(100vh - 120px);
+  padding: 2rem;
+  background: var(--bg);
+}
+
+.speedometer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Mensaje de página no encontrada */
+.notfound-message h1 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: var(--text);
+  text-shadow: 0 0 6px rgba(44, 44, 44, 0.6);
+}
+
+.notfound-message p {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 2rem;
+}
+
+.notfound-message .btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent);
+  color: var(--white);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+}
+
+.notfound-message .btn:hover {
+  background-color: #c10000;
+  box-shadow: 0 6px 14px rgba(255, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   Velocímetro (adaptado a variables)
+================================= */
+
+.speedometer {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  aspect-ratio: unset;
+  z-index: 2;
+}
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #4064ad 0 360deg);
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(100% - 10px),
+    #000 calc(100% - 7px)
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(100% - 10px),
+    #000 calc(100% - 7px)
+  );
+  filter: drop-shadow(0 0 4px rgba(14, 119, 248, 0.25))
+    drop-shadow(0 0 10px rgba(14, 119, 248, 0.16));
+}
+.inner-glow {
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, calc(0.1 * var(--glow-intensity))) 72%,
+    rgba(14, 119, 248, calc(0.1 * var(--glow-intensity))) 86%,
+    rgba(14, 119, 248, 0) 100%
+  );
+  filter: blur(0.55px) saturate(108%);
+  pointer-events: none;
+  z-index: 1;
+}
+.ring-progress {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #2cb403 0 var(--angle),
+    transparent var(--angle) 360deg
+  );
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(100% - 10px),
+    #000 calc(100% - 6px)
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(100% - 10px),
+    #000 calc(100% - 6px)
+  );
+  filter: blur(0.2px) saturate(104%);
+  z-index: 2;
+}
+.white-arc {
+  position: absolute;
+  inset: calc((-3px + 1px) * -1);
+  border-radius: 50%;
+  z-index: 4;
+  background: conic-gradient(
+    from 270deg,
+    rgba(255, 255, 255, 0) 0deg,
+    rgba(255, 255, 255, 0.2) 4deg,
+    rgba(255, 255, 255, 0.95) 10deg,
+    rgba(255, 255, 255, 0.95) 170deg,
+    rgba(255, 255, 255, 0.2) 176deg,
+    rgba(255, 255, 255, 0) 180deg,
+    transparent 360deg
+  );
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(100% - 1px),
+    #000 calc(100% - 1px)
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(100% - 1px),
+    #000 calc(100% - 1px)
+  );
+  transform: translateX(4px);
+  filter: blur(1px);
+  opacity: 0.98;
+}
+.blue-arc {
+  position: absolute;
+  inset: calc((-3px + 1px) * -1);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+  background: conic-gradient(
+    from 270deg,
+    transparent 0deg,
+    transparent 180deg,
+    rgba(14, 119, 248, 0.2) 184deg,
+    rgba(14, 119, 248, 0.95) 190deg,
+    rgba(14, 119, 248, 0.95) 350deg,
+    rgba(14, 119, 248, 0.2) 356deg,
+    transparent 360deg
+  );
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(100% - 1px),
+    #000 calc(100% - 1px)
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(100% - 1px),
+    #000 calc(100% - 1px)
+  );
+  transform: translateX(4px);
+  filter: blur(1px);
+  opacity: 0.98;
+}
+.core {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.speed {
+  font-weight: 200;
+  font-size: clamp(114px, 15.6vmin, 170px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color:var(--text-light);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.7),
+    0 0 14px rgba(255, 255, 255, 0.55), 0 0 28px rgba(37, 37, 37, 0.4),
+    0 0 48px rgba(56, 56, 56, 0.3);
+}
+.unit {
+  font-size: clamp(18px, 3vmin, 26px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 8px rgba(14, 119, 248, 0.3);
+}
+
+/* ================================
+   Botón acelerado
+================================= */
+
+.gear-indicator {
+  position: relative;
+  margin-top: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: linear-gradient(180deg, var(--accent) 0%, #c10000 100%);
+  border: 2px solid rgba(255, 0, 0, 0.25);
+  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gear-indicator:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 22px rgba(255, 0, 0, 0.6);
+  background: linear-gradient(180deg, #ff3333 0%, #a10000 100%);
+}
+
+.gear-indicator:active {
+  transform: scale(0.95);
+  box-shadow: inset 0 3px 6px rgba(228, 10, 10, 0.25);
+  background: linear-gradient(180deg, #c10000 0%, #880000 100%);
+}

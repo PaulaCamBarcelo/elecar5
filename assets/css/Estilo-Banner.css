@@ -1,0 +1,309 @@
+/* =========================
+   VARIABLES GLOBALES
+========================= */
+
+:root {
+  /* Espaciado */
+  --section-padding: 60px;
+
+  /* 🌞 MODO CLARO */
+  --bg: linear-gradient(135deg, #f5f5f5 0%, #ebebeb 50%, #ffffff 100%);
+  --bg-nav: #dcdcdc;
+  --text: #1b1b1b;
+  --text-light: #505050;
+  --accent: #b5120a;
+  --card: #ffffff;
+  --social-bg: #f0f0f0;
+  --btn-bg: #6c6c6c;
+  --btn-text: #f1f1f1;
+
+  /* Extras */
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/* 🌚 MODO OSCURO */
+body.dark {
+  --bg: linear-gradient(135deg, #101010 0%, #161616 50%, #1e1e1e 100%);
+  --bg-nav: #242424;
+  --text: #f0f0f0;
+  --text-light: #cccccc;
+  --accent: #b5120a;
+  --card: #1c1c1c;
+  --social-bg: rgba(181, 18, 10, 0.15);
+  --btn-bg: #b5120a;
+  --btn-text: #ffffff;
+}
+
+/* =========================
+   BASE DE TEMA
+========================= */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* =========================
+   BANNER SECTION
+========================= */
+.banner-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+  padding-top: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.banner-card {
+  position: relative;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.banner-card::before {
+  /* Capa de oscurecimiento sutil sobre la imagen */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.664), rgba(206, 206, 206, 0.196));
+  z-index: 0;
+  transition: background 0.4s ease;
+}
+
+.banner-card:hover {
+  transform: scale(1.02);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+  border-radius: 10px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  width: 100%;
+}
+.small-text{
+  color: var(--btn-bg);
+  font-weight: 800;
+  text-shadow: 0 1px 3px rgba(7, 7, 7, 0.606);
+}
+
+.banner-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.banner-desc {
+  font-size: 0.95rem;
+  color: var(--white);
+  margin-bottom: 15px;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .banner-section {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+  .banner-section .container{
+    width: 100%;
+  }
+
+  .banner-card {
+    height: 250px;
+  }
+
+  .banner-content {
+    padding: 20px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* =========================
+   SOCIAL / INSTAGRAM SECTION
+========================= */
+.social-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* ====== PERFIL DE INSTAGRAM ====== */
+.instagram-profile {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  height: 100%;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.instagram-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.instagram-avatar img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--bg-nav);
+}
+
+.instagram-info {
+  flex: 1;
+  color: var(--text);
+}
+
+/* Usuario + botón */
+.instagram-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.instagram-username {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.btn-follow {
+  background: var(--accent);
+  color: var(--btn-text);
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-follow:hover {
+  background: #8f0e08;
+  transform: translateY(-2px);
+}
+
+/* Estadísticas */
+.instagram-stats {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  color: var(--text-light);
+}
+
+.instagram-stats li strong {
+  font-weight: 600;
+  color: var(--text);
+  margin-right: 4px;
+}
+
+/* Biografía */
+.instagram-bio p {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.bio-desc {
+  color: var(--text-light);
+}
+
+/* ====== COLUMNA PROMOCIONAL ====== */
+.social-promo {
+  background: var(--social-bg);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  height: 100%;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.dark .social-promo {
+  background: linear-gradient(180deg, #2a2a2a 0%, #000 100%);
+  color: var(--white);
+}
+
+.promo-top {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.social-promo h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.promo-desc {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+  .social-section {
+    grid-template-columns: 1fr;
+    margin: 40px auto;
+    padding: 0 10px;
+  }
+
+  .instagram-profile,
+  .social-promo {
+    height: auto;
+  }
+
+  .instagram-profile {
+    order: 2;
+  }
+
+  .social-promo {
+    order: 1;
+    text-align: center;
+    align-items: center;
+  }
+
+  .social-promo h3 {
+    font-size: 1.6rem;
+  }
+}
