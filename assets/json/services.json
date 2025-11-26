@@ -1,0 +1,61 @@
+{
+  "diagnostico": {
+    "title": "Diagnóstico Automotriz",
+    "subtitle": "Detectamos fallas con precisión profesional.",
+    "category": "Electrónico",
+    "image": "assets/images/servicio/service_diagnostico.jpg",
+    "description": "El diagnóstico automotriz permite identificar fallas en los sistemas electrónicos, eléctricos y mecánicos del vehículo utilizando herramientas de última generación.",
+    "benefits": [
+      "Previene averías mayores.",
+      "Ahorra tiempo y dinero.",
+      "Detecta fallas ocultas.",
+      "Optimiza el rendimiento general."
+    ],
+    "includes": [
+      "Escaneo computarizado.",
+      "Revisión de sensores.",
+      "Chequeo del sistema de inyección.",
+      "Lectura de códigos de error."
+    ],
+    "related": ["electricidad", "mecanica"]
+  },
+
+  "electricidad": {
+    "title": "Reparaciones Eléctricas",
+    "subtitle": "Soluciones exactas para problemas eléctricos.",
+    "category": "Electrónica",
+    "image": "assets/images/servicio/Electro-C.jpg",
+    "description": "Reparamos alternadores, motores de arranque, fusibles, cableado y sistemas eléctricos completos. Además, contamos con servicio especializado en la reparación de placas electrónicas automotrices, incluyendo módulos de control, computadoras de motor (ECU) y sistemas electrónicos avanzados, garantizando precisión y funcionamiento óptimo.",
+    "benefits": [
+      "Soluciones rápidas.",
+      "Garantía en reparaciones.",
+      "Mayor seguridad."
+    ],
+    "includes": [
+      "Inspección del sistema eléctrico.",
+      "Prueba de componentes.",
+      "Reemplazo o reparación."
+    ],
+    "related": ["diagnostico", "mecanica"]
+  },
+
+  "mecanica": {
+    "title": "Mecánica General",
+    "subtitle": "Mantenimiento preventivo y correctivo.",
+    "category": "Mecánica",
+    "image": "assets/images/servicio/General.jpg",
+    "description": "Servicio completo de mecánica general: frenos, correas, suspensión y transmisión.",
+    "benefits": [
+      "Mayor vida útil del vehículo.",
+      "Menor riesgo de fallas.",
+      "Mejor rendimiento."
+    ],
+    "includes": [
+      "Ajustes generales.",
+      "Revisiones periódicas.",
+      "Lubricación."
+    ],
+    "related": ["diagnostico", "electricidad"]
+  }
+
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicio | Elecar5</title>
+
+  <!-- Fuentes y estilos base -->
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/single-service.css">
+
+
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <!-- favicons -->
+
+  <!-- font awesom icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Linking Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+  <div class="img-object"></div>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-content">
+
+        <div class="topbar-left">
+          <span><i class="fa fa-map-marker-alt"></i>Durazno - Uruguay</span>
+          <span><i class="far fa-clock"></i>Lun - Vie : 08:00 - 17:00</span>
+        </div>
+
+        <div class="topbar-right">
+          <a href="https://www.instagram.com/ele.car5/"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER NAV -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <nav class="main-nav">
+        <a href="index.html" class="header-floating-img logo">
+          <img src="assets/images/logo/logoW@2x.png" alt="Logo">
+        </a>
+
+        <ul class="nav">
+          <li><a href="index.html#top">Inicio</a></li>
+          <li><a href="index.html#about">Nosotros</a></li>
+
+          <li class="submenu">
+            <a href="index.html#services">Servicios</a>
+            <ul>
+              <li><a href="single-service.html?id=mecanica">Mecánica</a></li>
+              <li><a href="single-service.html?id=electricidad">Electrónica</a></li>
+              <li><a href="single-service.html?id=diagnostico">Diagnóstico</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#gallery">Galería</a></li>
+          <li><a href="index.html#contact-us">Contacto</a></li>
+        </ul>
+
+        <a class='menu-trigger'>
+          <span>Menu</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HEADER GENERAL DEL SERVICIO -->
+  <section class="page-header">
+    <h2>Elecar5 : <span class="highlight">Servicio</span></h2>
+    <h1 class="service-title"></h1>
+    <h3 class="service-subtitle"></h3>
+    <p class="service-category"></p>
+  </section>
+
+  <!-- CONTENIDO DEL SERVICIO -->
+  <section class="single-service-section container">
+
+    <div class="single-container">
+
+      <!-- Texto -->
+      <div class="left-content">
+        <p class="service-description"></p>
+
+        <div class="single-lists">
+          <h3 class="list-title">Beneficios</h3>
+          <ul class="service-benefits"></ul>
+
+          <h3 class="list-title">Incluye</h3>
+          <ul class="service-includes"></ul>
+        </div>
+
+      </div>
+
+      <!-- Imagen -->
+      <div class="right-image">
+        <img class="service-image" src="" alt="Servicio Elecar5">
+      </div>
+
+    </div>
+    <!-- CTA WhatsApp -->
+    <div class="service-cta" role="region" aria-label="Contactar por WhatsApp">
+      <div class="cta-inner">
+        <div class="cta-text">
+          <strong class="cta-title">¿Te interesa este servicio?</strong>
+          <p class="cta-sub">Habla ahora con un especialista y obtén presupuesto rápido vía WhatsApp.</p>
+        </div>
+        <a id="whatsappCtaBtn" class="btn-whatsapp"
+          href="https://wa.me/+598091222341?text=Estoy%20interesado%20en%20tu%20servicio%20de%20Electromecánica"
+          target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span class="btn-text">Enviar mensaje</span>
+        </a>
+      </div>
+    </div>
+    <!-- /CTA WhatsApp -->
+  </section>
+
+  <section class="container related-card">
+    <!-- SERVICIOS RELACIONADOS -->
+    <div class="related-services">
+      <h3 class="related-title">Servicios relacionados</h3>
+      <div class="related-grid service-related">
+        <!-- Se carga por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Floating Contact Menu ===== -->
+  <div class="contact-floating">
+    <div class="contact-menu" id="contactMenu">
+      <!-- #WHATSAPP -->
+      <a href="https://wa.me/+598091222341?text=Estoy%20interesado%20en%20tu%20servicio%20de%20Electromecánica"
+        target="_blank" class="contact-btn whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <!-- TELEFONO -->
+      <a href="tel:+598091222341" class="contact-btn phone">
+        <i class="fa-solid fa-phone"></i>
+      </a>
+    </div>
+
+    <button class="contact-toggle" id="contactToggle">
+      <i class="fa-solid fa-comments"></i>
+    </button>
+  </div>
+
+  <!-- ***** Footer Area Start ***** -->
+  <footer id="footer" class="footer-1">
+
+    <div class="footer-floating-img">
+      <img src="assets/images/logo/Elecar-footerA.svg" alt="Elecar5" />
+    </div>
+
+    <div class="main-footer widgets-dark typo-light">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="widget subscribe no-box">
+              <h5 class="widget-title">Elecar5<span></span></h5>
+              <p>Taller de Electromecánica y Mecánica Automotriz.</p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="widget no-box">
+              <h5 class="widget-title">Enlaces<span></span></h5>
+              <ul class="thumbnail-widget">
+                <li>
+                  <div class="thumb-content"><a href="index.html#top">Inicio</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="index.html#about">Nosotros</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="index.html#gallery">Galeria</a></div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="widget no-box">
+              <h5 class="widget-title">Servicios<span></span></h5>
+              <ul>
+                <li>
+                  <div class="thumb-content"><a href="single-service.html?id=diagnostico">Diagnóstico</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="single-service.html?id=mecanica">Mecánica</a></div>
+                </li>
+                <li>
+                  <div class="thumb-content"><a href="single-service.html?id=electricidad">Elecrtónica</a></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-3">
+
+            <div class="widget no-box">
+              <h5 class="widget-title">Contácto<span></span></h5>
+
+              <p><a href="mailto:info@domain.com" title="glorythemes">info@elecar5.com</a></p>
+              <ul class="social-footer2">
+                <li>
+                  <a title="instagram" target="_blank" href="https://www.instagram.com/ele.car5/">
+                    <img alt="instagram" width="30" height="30" src="assets/images/svg/instagram.svg">
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12 text-center">
+            <p>© 2025 Elecar5. Todos los derechos reservados.</p>
+          </div>
+
+          <div class="col-md-12 text-center">
+            <p>Diseño por
+              <a href="https://paulacambarcelo.github.io/lanisterweb/" target="_blank" class="webinfy-link">
+                Lanisterweb
+              </a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="btn back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="assets/js/popper.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- Plugins -->
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/scrollreveal.min.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <script src="assets/js/imgfix.min.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/map-contact.js"></script>
+
+
+  <!-- Global Init -->
+  <script src="assets/js/custom.js"></script>
+
+  <!-- JS -->
+  <script src="assets/js/service.js"></script>
+  <script src="assets/js/animation.js"></script>
+
+</body>
+
+</html>
